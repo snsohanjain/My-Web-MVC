@@ -1,11 +1,11 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Yahoo!!!!!!!!</title>
-  </head>
-  <body>
-    <h1>My First JSP ${name}</h1>
-  </body>
+<html>
+<head>
+  <title>Yahoo!!</title>
+</head>
+<body>
+<form action="./login.do" method="post">
+  <p><font color="red">${errorMessage}</font></p>
+  Enter Your name <input type="text" name="name"/> Password <input type="password" name="password"> <input type="submit" value="login"/>
+</form>
+</body>
 </html>
