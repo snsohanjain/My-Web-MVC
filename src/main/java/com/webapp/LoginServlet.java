@@ -15,6 +15,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 		request.setAttribute("name", request.getParameter("name"));
+		request.setAttribute("password",request.getParameter("password"));
 		request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
 	}
 }
