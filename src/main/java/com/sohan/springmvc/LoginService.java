@@ -1,6 +1,6 @@
-package com.sohan.webapp;
+package com.sohan.springmvc;
 
-public class UserValidationService {
+public class LoginService {
     public boolean isUserValid(String user, String password){
         if(user.equals("Sohan Jain") && password.equals("12345")){
             return true;
