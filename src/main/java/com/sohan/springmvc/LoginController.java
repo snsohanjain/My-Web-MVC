@@ -13,9 +13,8 @@ public class LoginController {
         return "Hello World !";
     }
     @RequestMapping(value = "/login5")
-    @ResponseBody
     public String sayGoodBye(){
-        return "Good Bye";
+        return "login";
     }
 
 }
