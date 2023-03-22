@@ -1,4 +1,4 @@
-package com.sohan.springmvc;
+package com.sohan.login;
 
 import org.springframework.stereotype.Service;
 
