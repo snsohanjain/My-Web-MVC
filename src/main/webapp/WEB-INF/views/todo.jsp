@@ -11,8 +11,10 @@
     <title>Todo</title>
 </head>
 <body>
-Hi ${name}
-Your Todos are ${todos}
-
+<h1>ADD TODO</h1>
+<form action="/add-todo" METHOD="post">
+    <input name="desc"  required="required" type="text"/>
+    <input type="submit" value="Add">
+</form>
 </body>
 </html>

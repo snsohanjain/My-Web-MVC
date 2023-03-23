@@ -16,6 +16,7 @@
             <value>.jsp</value>
         </property>
     </bean>
+    <mvc:resources mapping="/webjars/**" location="/"/>
 
     <mvc:annotation-driven />
 
