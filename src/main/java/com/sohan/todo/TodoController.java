@@ -43,6 +43,7 @@ public class TodoController {
     @RequestMapping(value = "/add-todo", method = RequestMethod.POST)
     public String addTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
 
+//        throw new RuntimeException("exception");
         if (result.hasErrors())
             return "todo";
 
