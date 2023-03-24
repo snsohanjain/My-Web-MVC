@@ -1,12 +1,7 @@
-<html>
-<head>
-    <title>Welcome</title>
-</head>
-<body>
+<%@include file="css/style.jspf"%>
 <%@include file="common/navigation.jspf"%>
-Welcome ${name}
+<center>Welcome ${name}</center>
 </br>
-Now you can <a href="/list-todo">Manage Your Todos</a>
-
+<center>Now you can <a href="/list-todo">Manage Your Todos</a></center>
 </body>
 </html>

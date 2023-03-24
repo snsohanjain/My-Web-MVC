@@ -1,5 +1,6 @@
 <%@include file="common/header.jspf"%>
 <%@include file="common/navigation.jspf"%>
+<%@include file="css/style.jspf"%>
 
 <div class="container">
     <table class="table table-striped">
@@ -9,7 +10,7 @@
             <th>Description</th>
             <th>Date</th>
             <th>Completed</th>
-            <th></th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -23,7 +24,13 @@
                 <td>
                     <a type="button" class="btn btn-warning"
                        href="/update-todo?id=${todo.id}">Update</a>
-                    <a type="button" class="btn btn-warning"
+                </td>
+                <td>
+                    <a type="button" class="btn btn-success"
+                       href="/delete-todo?id=${todo.id}">Completed</a>
+                </td>
+                <td>
+                    <a type="button" class="btn btn-danger"
                        href="/delete-todo?id=${todo.id}">Delete</a>
                 </td>
             </tr>
@@ -36,3 +43,6 @@
 </div>
 </body>
 </html>
+
+
+

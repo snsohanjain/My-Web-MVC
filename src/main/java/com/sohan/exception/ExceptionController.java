@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 @ControllerAdvice
 @EnableWebMvc
 public class ExceptionController {
-
 	private Log logger = LogFactory.getLog(ExceptionController.class);
 
 	@ExceptionHandler(value = Exception.class)

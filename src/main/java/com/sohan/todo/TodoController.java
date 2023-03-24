@@ -72,7 +72,7 @@ public class TodoController {
         if (result.hasErrors()) {
             return "todo";
         }
-        todo.setUser("SohanJain");
+        todo.setUser("sohanjain");
         service.updateTodo(todo);
 
         System.out.println(todo);
