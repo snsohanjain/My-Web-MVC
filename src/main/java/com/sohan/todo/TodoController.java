@@ -2,6 +2,8 @@ package com.sohan.todo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -28,9 +30,11 @@ public class TodoController {
     }
     @RequestMapping(value = "/list-todo", method = RequestMethod.GET)
     public String showTodosList(ModelMap model) {
-        model.addAttribute("todos", service.retrieveTodos("SohanJain"));
+        String user = getLoggedInUserName();
+        model.addAttribute("todos", service.retrieveTodos(user));
         return "list-todo";
     }
+
     @RequestMapping(value = "/add-todo", method = RequestMethod.GET)
     public String showAddTodoPage(ModelMap model) {
         model.addAttribute("todo", new Todo());
@@ -42,11 +46,19 @@ public class TodoController {
         if (result.hasErrors())
             return "todo";
 
-        System.out.println(todo.getDesc());
-
-        service.addTodo("SohanJain",todo.getDesc(), new Date(), false);
+        service.addTodo(getLoggedInUserName(), todo.getDesc(),
+                todo.getTargetDate(), false);
         model.clear();// to prevent request parameter "name" to be passed
         return "redirect:/list-todo";
+    }
+    private String getLoggedInUserName() {
+        Object principal = SecurityContextHolder.getContext()
+                .getAuthentication().getPrincipal();
+
+        if (principal instanceof UserDetails)
+            return ((UserDetails) principal).getUsername();
+
+        return principal.toString();
     }
     @RequestMapping(value = "/update-todo", method = RequestMethod.GET)
     public String updateTodo(ModelMap model, @RequestParam int id){

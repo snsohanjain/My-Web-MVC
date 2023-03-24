@@ -1,6 +1,8 @@
 package com.sohan.todo;
 
-public interface TodoRepository {
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface TodoRepository extends MongoRepository<Todo, Integer> {
 
 
 }
